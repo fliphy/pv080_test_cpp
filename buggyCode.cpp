@@ -1,13 +1,15 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <stdio.h>
 #include <vector>
 #include <list>
+#include <stdlib.h>
 
 using namespace std;
 
 int * buggyFunction(int *a)
 {
+
 
 	list<int> b;
 	list<int> c;
@@ -21,14 +23,17 @@ int * buggyFunction(int *a)
 	if (1 != e || 3 != e)
 		e = e + 600;
 
-	char f[20];
-	//gets(f);
+	if (e = 2147483647)
+		cout << "ok";
+
+	char buf[5];
+	strcpy(buf, "polikl\0");
 
 	bool g = true;
 	if (g == 3)
 
 
-//	float h = 7 / 0;
+	float h = 7 / 0;
 	float h = 10 % 1;
 
 	int* i = NULL;
@@ -55,6 +60,12 @@ int * buggyFunction(int *a)
 		}
 	}
 
+	char* r = (char*)malloc(2147483647);
+
+
+	double* t;
+	t = (double*)malloc(sizeof(t));
+
 	return a;
 	string z;
 }
@@ -68,6 +79,7 @@ int main()
 	delete [] p;
 	buggyFunction(a);
 	delete[] p;
+	cout << *p;
 
 }
 
